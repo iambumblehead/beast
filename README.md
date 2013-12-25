@@ -301,16 +301,16 @@ beast({ frames : 30 }).fade({
 
 Plugins provide an implementation and interface for animated actions. All provided plugins support these properties:
 
- * **elem= _documentElement_** _default: null_
+ * **elem= _documentElement_** _default: null_  
    target element for the animation
    
- * **ease= _str_** _default: 'end'_
+ * **ease= _str_** _default: 'end'_  
    slow the 'bgn' or 'end' of the animation
    
  * **isclean= _bool_** _default: true_   
    remove elem.style definitions made by beast when animation is finished?
 
- * **classNameEnd= _str_** _default: ''_
+ * **classNameEnd= _str_** _default: ''_  
    className added to elem at end of animation
 
 
@@ -329,7 +329,7 @@ ClassNames are added/removed with [elemst][4]. As a result, all classNames added
     }).init();
     ```
 
-    * **opend= _num_**, _default: '100'_
+    * **opend= _num_**, _default: '100'_  
       opacity end value, a number 0-100
 
     Starting opacity value is obtained from the element with the cascade being relevant. opacity is handled with [domopacity][5].
@@ -349,16 +349,16 @@ ClassNames are added/removed with [elemst][4]. As a result, all classNames added
     }).init(); 
     ```
 
-    * **bgnColor= _str_**, _default: elem current 'color'_
+    * **bgnColor= _str_**, _default: elem current 'color'_  
       elem start animation 'color'
    
-    * **endColor= _str_**, _default: elem current 'color'_
+    * **endColor= _str_**, _default: elem current 'color'_  
       elem end animation 'color'   
 
-    * **bgnBackgroundColor= _str_**, _default: elem current 'background-color'_
+    * **bgnBackgroundColor= _str_**, _default: elem current 'background-color'_  
       elem start animation 'backround-color'   
    
-    * **bgnBackgroundColor= _str_**, _default: elem current 'background-color'_
+    * **bgnBackgroundColor= _str_**, _default: elem current 'background-color'_  
       elem start animation 'backround-color'      
 
     where color properties are undefined, existing color properties of elem are used. The 'a' in rgba is ignored, only non-transparent colors are animated. colors may be defined with hex code or rgba format. plugin uses browser-provided `getComputedStyle` -you will need a polyfill for it in some browser environments, such as IE8.
@@ -375,10 +375,10 @@ ClassNames are added/removed with [elemst][4]. As a result, all classNames added
     }).init(); 
     ```
     
-    * **ltbgn= _numarr_**, _default: [elem current 'left', elem current 'top']_
+    * **ltbgn= _numarr_**, _default: [elem current 'left', elem current 'top']_  
       elem start animation [left, top]
    
-    * **ltend= _numarr_**, _default: [elem current 'left', elem current 'top']_
+    * **ltend= _numarr_**, _default: [elem current 'left', elem current 'top']_  
       elem end animation [left, top]   
     
     _by default_, `isclean` removes 'top' and 'left' styles at end of animation, recommendation is to use `classNameEnd` to preserve position.
