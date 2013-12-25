@@ -393,10 +393,10 @@ ClassNames are added/removed with [elemst][4]. As a result, all classNames added
         whend : [300, 200]         
     }).init(); 
     ```
-    * **whbgn= _numarr_**, _default: [elem current 'width', elem current 'height']_
+    * **whbgn= _numarr_**, _default: [elem current 'width', elem current 'height']_  
       elem start animation [width, height]
    
-    * **whend= _numarr_**, _default: [elem current 'width', elem current 'height']_
+    * **whend= _numarr_**, _default: [elem current 'width', elem current 'height']_  
       elem end animation [width, height]
       
     _by default_, `isclean` removes 'width' and 'height' styles at end of animation, recommendation is to use `classNameEnd` to preserve shape.
