@@ -49,8 +49,8 @@ Run `npm start` to build a sample beast page and to see an advanced component co
 
 
 [3]: https://github.com/iambumblehead/scroungejs          "scroungejs"
-[6]: http://github.com/iambumblehead/scroungejs/raw/master/beast.min.js
-[7]: http://github.com/iambumblehead/scroungejs/raw/master/beast.unmin.js
+[6]: http://github.com/iambumblehead/beast/raw/master/beast.min.js
+[7]: http://github.com/iambumblehead/beast/raw/master/beast.unmin.js
 
 ---------------------------------------------------------
 #### <a id="test"></a>Test:
@@ -287,18 +287,19 @@ Run `npm start` to build a sample beast page and to see an advanced component co
  4. [*shape*](#plugin-shape)
 
 
- *ex*
- ``` javascript
- beast({ frames : 30 }).fade({ 
-     classNameEnd : 'vis-hide',
-     isclean : false,
-     elem : elem, 
-     ease : 'bgn',
-     opend : 0
- }).init(); 
- ```
 
- Plugins provide an implementation and interface for animated actions. All provided plugins support these properties:
+*ex*
+``` javascript
+beast({ frames : 30 }).fade({ 
+    classNameEnd : 'vis-hide',
+    isclean : false,
+    elem : elem, 
+    ease : 'bgn',
+    opend : 0
+}).init(); 
+```
+
+Plugins provide an implementation and interface for animated actions. All provided plugins support these properties:
 
  * **elem= _documentElement_** _default: null_
    target element for the animation
@@ -313,9 +314,9 @@ Run `npm start` to build a sample beast page and to see an advanced component co
    className added to elem at end of animation
 
 
- Plugins are optimised. functions and data are cached where possible. Little error-handling is provided -given elements must exist in the document, numeric properties must be numeric, etc.    
+Plugins are optimised. functions and data are cached where possible. Little error-handling is provided -given elements must exist in the document, numeric properties must be numeric, etc.    
 
- ClassNames are added/removed with [elemst][4]. As a result, all classNames added/removed with beast are prefixed with 'st-'. For example, classNameEnd 'box-shut' would be found in the className of an element as 'st-box-shut'.
+ClassNames are added/removed with [elemst][4]. As a result, all classNames added/removed with beast are prefixed with 'st-'. For example, classNameEnd 'box-shut' would be found in the className of an element as 'st-box-shut'.
 
   * <a href="#plugin-fade" id="plugin-fade">**plugin-fade**</a>
 
