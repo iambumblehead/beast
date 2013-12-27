@@ -186,7 +186,7 @@ Run `npm start` to build a sample beast page and to see an advanced component co
      whbgn : [2000, 2000],
      classNameFin : 'show-open'
  }).init(function () {
-     that.fade = beast({
+     beast({
          frames : 6
      }).fade({
          classNameEnd : 'vis-hide',

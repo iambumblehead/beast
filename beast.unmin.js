@@ -348,13 +348,13 @@ var elemst = {
   }
 };
 // Filename: beastplug.js  
-// Timestamp: 2013.12.24-17:42:13 (last modified)  
+// Timestamp: 2013.12.26-21:24:57 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: elemst.js, beast.js
 
 
 
-var beastplug = ((typeof module === 'object') ? module : {}).exports = function (augmfn) {
+var beastplug = ((typeof module === 'object') ? module : {}).exports = function (name, augmfn) {
   // redefine these values with plugin
   var pluginproto = {
     className : ':name-beast-animating',
@@ -400,12 +400,12 @@ var beastplug = ((typeof module === 'object') ? module : {}).exports = function 
     }
   };
 
-  beast.proto[augmfn.name] = function (opts) {
+  beast.proto[name] = function (opts) {
     var that = Object.create(pluginproto);
     
     augmfn(that);
     that.opts = opts;
-    that.className = that.className.replace(/:name/, augmfn.name);
+    that.className = that.className.replace(/:name/, name);
     if (typeof opts.isclean === 'boolean') {
       that.isclean = opts.isclean;
     }
@@ -415,7 +415,7 @@ var beastplug = ((typeof module === 'object') ? module : {}).exports = function 
   };
 };
 // Filename: curved.js
-// Timestamp: 2013.12.22-22:08:26 (last modified)  
+// Timestamp: 2013.12.26-21:18:26 (last modified)  
 // Author(s): Dan Pupius (www.pupius.co.uk), Bumblehead (www.bumblehead.com)
 //
 // thanks to Daniel Pupius
@@ -440,10 +440,9 @@ var beastplug = ((typeof module === 'object') ? module : {}).exports = function 
 // Where C is the control, and '[ ]' indicates subscript
 // point = C[1]B[1](d) + C[2]B[2](d) + C[3]B[3](d) + C[4]B[4](d)
 //
-// Some changes to the scripting given at the link above:
+// change to the scripting at the link above:
 // - given values are 'shifted' into a positive axis so that curves may be
 //   generated when negative values are given.
-// - xy values are stored in an array rather than an object
 
 var curved = ((typeof module === 'object') ? module : {}).exports = (function () {
 
@@ -462,7 +461,7 @@ var curved = ((typeof module === 'object') ? module : {}).exports = (function ()
     var shiftval = getShift(bgnCoord, endCoord),
         C1 = endCoord + shiftval,
         C4 = bgnCoord + shiftval,
-        C2_3 = easeStr === 'ease-end' ? C1 : C4;
+        C2_3 = easeStr === 'end' ? C1 : C4;
 
     return function (per) {
       return Math.round(
@@ -476,7 +475,7 @@ var curved = ((typeof module === 'object') ? module : {}).exports = (function ()
 
 }());
 // Filename: beastmove.js  
-// Timestamp: 2013.12.24-17:51:02 (last modified)  
+// Timestamp: 2013.12.26-21:23:51 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: curved.js, elemst.js, beastplug.js, domlt.js
 //
@@ -491,7 +490,7 @@ var curved = ((typeof module === 'object') ? module : {}).exports = (function ()
 //
 // element should be styled 'absolute' and 'block'
 
-beastplug(function move (b) {
+beastplug('move', function (b) {
 
   b.getdata = function (frames, opts) {
     var elem = opts.elem,
@@ -540,7 +539,7 @@ beastplug(function move (b) {
   };
 });
 // Filename: beastcolor.js  
-// Timestamp: 2013.12.24-00:30:02 (last modified)  
+// Timestamp: 2013.12.26-21:24:12 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: elemst.js, curved.js, beastplug.js
 //
@@ -556,7 +555,7 @@ beastplug(function move (b) {
 // }).init();
 
 
-beastplug(function color (b) {
+beastplug('color', function (b) {
 
   b.extractRGBarr = function (rgbStr) {
     if (rgbStr.match(/^#/)) {
@@ -687,7 +686,7 @@ var domopacity = (function (s, p, deffn) {
 
 }());
 // Filename: beastfade.js  
-// Timestamp: 2013.12.23-23:50:48 (last modified)  
+// Timestamp: 2013.12.26-21:23:39 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: elemst.js, curved.js, beastplug.js, domopacity.js
 //
@@ -702,7 +701,7 @@ var domopacity = (function (s, p, deffn) {
 // }).init();
 
 
-beastplug(function fade (b) {
+beastplug('fade', function (b) {
 
   b.getdata = function (frames, opts) {
     var arr = [],
@@ -731,7 +730,7 @@ beastplug(function fade (b) {
 
 });
 // Filename: domwh.js  
-// Timestamp: 2013.12.18-20:33:32 (last modified)  
+// Timestamp: 2013.12.24-17:03:48 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 
 var domwh = (function (p, d, doc) {
@@ -739,11 +738,9 @@ var domwh = (function (p, d, doc) {
   doc = document;
 
   p = function(elem) {
-    var dims = [], d;
+    var d, dims = [elem.offsetWidth, elem.offsetHeight];
 
-    if (elem.offsetWidth) {
-      dims = [elem.offsetWidth, elem.offsetHeight];
-    } else {
+    if (!dims[0]) {
       d = elem.style;      
       if (d.display === 'none') {
         d.display = 'block';
@@ -773,7 +770,7 @@ var domwh = (function (p, d, doc) {
 
 }());
 // Filename: beastshape.js  
-// Timestamp: 2013.12.24-17:52:05 (last modified)  
+// Timestamp: 2013.12.26-21:24:02 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: curved.js, elemst.js, domwh.js, beastplug.js
 //
@@ -781,7 +778,7 @@ var domwh = (function (p, d, doc) {
 // adds 'plugin' ability to the animation system here.
 //
 
-beastplug(function shape (b) {
+beastplug('shape', function (b) {
 
   b.getdata = function (frames, opts) {
     var elem = opts.elem,
