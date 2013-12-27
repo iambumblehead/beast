@@ -1,5 +1,5 @@
 // Filename: beastdummy.js  
-// Timestamp: 2013.12.24-16:36:50 (last modified)  
+// Timestamp: 2013.12.26-21:24:23 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: beastplug.js
 //
@@ -9,7 +9,7 @@
 
 var beastplug = require('./beastplug.js');
 
-beastplug(function dummy (b) {
+beastplug('dummy', function (b) {
   b.init = function () { console.log('init'); };
 
   b.kill = function () { console.log('kill'); };

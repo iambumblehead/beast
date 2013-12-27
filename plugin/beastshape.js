@@ -1,5 +1,5 @@
 // Filename: beastshape.js  
-// Timestamp: 2013.12.24-17:52:05 (last modified)  
+// Timestamp: 2013.12.26-21:24:02 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: curved.js, elemst.js, domwh.js, beastplug.js
 //
@@ -7,7 +7,7 @@
 // adds 'plugin' ability to the animation system here.
 //
 
-beastplug(function shape (b) {
+beastplug('shape', function (b) {
 
   b.getdata = function (frames, opts) {
     var elem = opts.elem,

@@ -21,23 +21,8 @@ startutils.createFileIfNotExist({
     outputPath : './test/testbuildFin', 
     isRecursive : true,
     isSourcePathUnique : true,
-    isCompressed : false,
-    isConcatenated : false,
-    basepage : './test/index.html'
-  };
-
-  scroungeTestOpts = {
-    inputPath : [
-      './test/testbuildSrc',
-      './node_modules',
-      './plugin',
-      './beast.js'
-    ],
-    outputPath : './test/testbuildFin', 
-    isRecursive : true,
-    isSourcePathUnique : true,
-    isCompressed : false,
-    isConcatenated : false,
+    isCompressed : true,
+    isConcatenated : true,
     basepage : './test/index.html'
   };
 
@@ -56,6 +41,7 @@ startutils.createFileIfNotExist({
   scroungeUnminOpts.isCompressed = false;
   scroungeUnminOpts.isConcatenated = true;
 
+  
   scroungejs.build(scroungeTestOpts, function (err, res) {
     if (err) return console.log(err);
 

@@ -1,5 +1,5 @@
 // Filename: beastcolor.js  
-// Timestamp: 2013.12.24-00:30:02 (last modified)  
+// Timestamp: 2013.12.26-21:24:12 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: elemst.js, curved.js, beastplug.js
 //
@@ -15,7 +15,7 @@
 // }).init();
 
 
-beastplug(function color (b) {
+beastplug('color', function (b) {
 
   b.extractRGBarr = function (rgbStr) {
     if (rgbStr.match(/^#/)) {

@@ -1,5 +1,5 @@
 // Filename: beastmove.js  
-// Timestamp: 2013.12.24-17:51:02 (last modified)  
+// Timestamp: 2013.12.26-21:23:51 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: curved.js, elemst.js, beastplug.js, domlt.js
 //
@@ -14,7 +14,7 @@
 //
 // element should be styled 'absolute' and 'block'
 
-beastplug(function move (b) {
+beastplug('move', function (b) {
 
   b.getdata = function (frames, opts) {
     var elem = opts.elem,

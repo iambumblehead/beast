@@ -1,5 +1,5 @@
 // Filename: beastfade.js  
-// Timestamp: 2013.12.23-23:50:48 (last modified)  
+// Timestamp: 2013.12.26-21:23:39 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: elemst.js, curved.js, beastplug.js, domopacity.js
 //
@@ -14,7 +14,7 @@
 // }).init();
 
 
-beastplug(function fade (b) {
+beastplug('fade', function (b) {
 
   b.getdata = function (frames, opts) {
     var arr = [],

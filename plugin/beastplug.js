@@ -1,11 +1,11 @@
 // Filename: beastplug.js  
-// Timestamp: 2013.12.24-17:42:13 (last modified)  
+// Timestamp: 2013.12.26-21:24:57 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: elemst.js, beast.js
 
 var beast = require('../beast.js');
 
-var beastplug = ((typeof module === 'object') ? module : {}).exports = function (augmfn) {
+var beastplug = ((typeof module === 'object') ? module : {}).exports = function (name, augmfn) {
   // redefine these values with plugin
   var pluginproto = {
     className : ':name-beast-animating',
@@ -51,12 +51,12 @@ var beastplug = ((typeof module === 'object') ? module : {}).exports = function 
     }
   };
 
-  beast.proto[augmfn.name] = function (opts) {
+  beast.proto[name] = function (opts) {
     var that = Object.create(pluginproto);
     
     augmfn(that);
     that.opts = opts;
-    that.className = that.className.replace(/:name/, augmfn.name);
+    that.className = that.className.replace(/:name/, name);
     if (typeof opts.isclean === 'boolean') {
       that.isclean = opts.isclean;
     }
