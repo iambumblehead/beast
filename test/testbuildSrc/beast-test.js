@@ -1,7 +1,7 @@
 // Filename: beast-test.js
-// Timestamp: 2013.12.24-17:52:56 (last modified)  
+// Timestamp: 2014.05.11-16:38:01 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)
-// Requires: beast.js, boxlet.js
+// Requires: beast.js, beast-test-boxlet.js
 
 var test = {
   init : function () {

@@ -1,5 +1,5 @@
-// Filename: boxlet.js
-// Timestamp: 2013.12.24-17:37:16 (last modified)  
+// Filename: beast-test-boxlet.js
+// Timestamp: 2014.05.11-16:37:07 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)
 // Requires: lsn.js, domev.js, elemst.js, lockfn.js
 // beastshape.js, beastfade.js, beastcolor.js, beastmove.js
