@@ -49,8 +49,8 @@ Run `npm start` to build a sample beast page and to see an advanced component co
 
 
 [3]: https://github.com/iambumblehead/scroungejs          "scroungejs"
-[6]: http://github.com/iambumblehead/beast/raw/master/beast.min.js
-[7]: http://github.com/iambumblehead/beast/raw/master/beast.unmin.js
+[6]: https://github.com/iambumblehead/beast/raw/master/beast.min.js
+[7]: https://github.com/iambumblehead/beast/raw/master/beast.unmin.js
 
 ---------------------------------------------------------
 #### <a id="test"></a>Test:
@@ -415,7 +415,7 @@ For tablets, phones and older IE browsers... in many use-cases beast performs wi
 ---------------------------------------------------------
 #### <a id="license">License:
 
- ![scrounge](http://github.com/iambumblehead/scroungejs/raw/master/img/hand.png) 
+ ![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png) 
 
 (The MIT License)
 
