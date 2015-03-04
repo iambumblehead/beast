@@ -1,5 +1,5 @@
 // Filename: beastshape.js  
-// Timestamp: 2013.12.26-21:24:02 (last modified)  
+// Timestamp: 2015.03.03-16:17:28 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: curved.js, elemst.js, domwh.js, beastplug.js
 //
@@ -13,8 +13,8 @@ beastplug('shape', function (b) {
     var elem = opts.elem,
         ease = opts.ease,
         whcur = domwh(elem),
-        whbgn = opts.whbgn || whcur,
-        whend = opts.whend || whcur,
+        whbgn = b.getasfilleddimarr(opts.whbgn, whcur),
+        whend = b.getasfilleddimarr(opts.whend, whcur),
         wharr = [],
         isw = b.isanimated(whbgn, whend, 0),
         ish = b.isanimated(whbgn, whend, 1),

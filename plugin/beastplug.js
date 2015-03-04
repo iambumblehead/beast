@@ -1,5 +1,5 @@
 // Filename: beastplug.js  
-// Timestamp: 2013.12.26-21:24:57 (last modified)  
+// Timestamp: 2015.03.03-16:16:39 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: elemst.js, beast.js
 
@@ -17,6 +17,13 @@ var beastplug = ((typeof module === 'object') ? module : {}).exports = function 
     },
     getComputed : function (elem, style) {
       return getComputedStyle(elem, null).getPropertyValue(style);
+    },
+    getasfilleddimarr : function (arr1, arr2) {
+      var isarr = Array.isArray;
+      return [
+        isarr(arr1) && typeof arr1[0] === 'number' ? arr1[0] : arr2[0],
+        isarr(arr1) && typeof arr1[1] === 'number' ? arr1[1] : arr2[1]
+      ];
     },
     isanimated : function (arr1, arr2, i) {
       return arr1[i] !== arr2[i];

@@ -1,5 +1,5 @@
 // Filename: beastmove.js  
-// Timestamp: 2013.12.26-21:23:51 (last modified)  
+// Timestamp: 2015.03.03-16:18:22 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)  
 // Requires: curved.js, elemst.js, beastplug.js, domlt.js
 //
@@ -20,8 +20,8 @@ beastplug('move', function (b) {
     var elem = opts.elem,
         ease = opts.ease,
         ltcur = domlt(elem),
-        ltbgn = opts.ltbgn || ltcur,
-        ltend = opts.ltend || ltcur,
+        ltbgn = b.getasfilleddimarr(opts.ltbgn, ltcur),
+        ltend = b.getasfilleddimarr(opts.ltend, ltcur),
         ltarr = [],
         isl = b.isanimated(ltbgn, ltend, 0),
         ist = b.isanimated(ltbgn, ltend, 1),

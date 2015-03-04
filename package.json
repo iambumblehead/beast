@@ -1,6 +1,6 @@
 {
   "name": "beast",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "readmeFilename": "README.md",
   "description": "provides a timer'd loop with hooks producing various animated effects",
   "repository": {
